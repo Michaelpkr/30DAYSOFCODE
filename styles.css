@@ -1,0 +1,97 @@
+/* GLOBAL STYLE FIX */
+html body{
+    padding: 0;
+    margin: 0;
+}
+
+/* PAGE LAYOUT */
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    border: black solid 1px;
+    padding: 0 10%;
+}
+
+nav{
+    background-color: forestgreen;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh;
+}
+
+/* NAVIGATION */
+
+.navItems {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.navItems li{
+    display: flex;
+    list-style-type: none;
+    padding: 0px 10px;
+    margin: 0px 5px;
+    border: rgb(70, 24, 24) solid 1px;
+    border-radius: 4px;
+}
+
+/* FONT STYLES */
+
+h1{
+    font-size: 3em;
+}
+
+h2{
+    font-size: 2.5em;
+}
+
+p{
+    font-size: 2em;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    font-weight: bolder;
+    color: white;
+    transition: 0.5s;
+
+}
+a:active{
+    color: white;
+}
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 600px) {
+
+    nav{
+        background-color: forestgreen;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    h1{
+        font-size: 2em;
+        text-align: center;
+    }
+
+
+    .navItems {
+        border: blue solid 1px;
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .navItems li{
+        list-style-type: none;
+        padding-inline-end: 2%;
+        justify-content: center;
+    }
+  }
