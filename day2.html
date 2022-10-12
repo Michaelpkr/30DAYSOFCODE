@@ -4,49 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles2.css">
+    <script src="script.js"></script>
     <title>30DAYSOFCODE</title>
 </head>
 <body>
     <nav>
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
-            <a href="index.html"><li>Day 1</li></a>
-            <a href="day2.html"><li>Day 2</li></a>
-            <a href="day3.html"><li>Day 3</li></a>
-            <a href="day4.html"><li>Day 4</li></a>
-            <a href="day5.html"><li>Day 5</li></a>
-            <a href="day6.html"><li>Day 6</li></a>
-            <a href="day7.html"><li>Day 7</li></a>
-            <a href="day8.html"><li>Day 8</li></a>
-            <a href="day9.html"><li>Day 9</li></a>
-            <a href="day10.html"><li>Day 10</li></a>
-            <a href="day11.html"><li>Day 11</li></a>
-            <a href="day12.html"><li>Day 12</li></a>
-            <a href="day13.html"><li>Day 13</li></a>
-            <a href="day14.html"><li>Day 14</li></a>
-            <a href="day15.html"><li>Day 15</li></a>
-            <a href="day16.html"><li>Day 16</li></a>
-            <a href="day17.html"><li>Day 17</li></a>
-            <a href="day18.html"><li>Day 18</li></a>
-            <a href="day19.html"><li>Day 19</li></a>
-            <a href="day20.html"><li>Day 20</li></a>
-            <a href="day22.html"><li>Day 22</li></a>
-            <a href="day23.html"><li>Day 23</li></a>
-            <a href="day24.html"><li>Day 24</li></a>
-            <a href="day25.html"><li>Day 25</li></a>
-            <a href="day26.html"><li>Day 26</li></a>
-            <a href="day27.html"><li>Day 27</li></a>
-            <a href="day28.html"><li>Day 28</li></a>
-            <a href="day29.html"><li>Day 29</li></a>
-            <a href="day30.html"><li>Day 30</li></a>
+            <a href="index.html"><li>1</li></a>
+            <a href="day2.html"><li>2</li></a>
+            <a href="day3.html"><li>3</li></a>
+            <a href="day4.html"><li>4</li></a>
+            <a href="day5.html"><li>5</li></a>
+            <a href="day6.html"><li>6</li></a>
+            <a href="day7.html"><li>7</li></a>
+            <a href="day8.html"><li>8</li></a>
+            <a href="day9.html"><li>9</li></a>
+            <a href="day10.html"><li>10</li></a>
+            <a href="day11.html"><li>11</li></a>
+            <a href="day12.html"><li>12</li></a>
+            <a href="day13.html"><li>13</li></a>
+            <a href="day14.html"><li>14</li></a>
+            <a href="day15.html"><li>15</li></a>
+            <a href="day16.html"><li>16</li></a>
+            <a href="day17.html"><li>17</li></a>
+            <a href="day18.html"><li>18</li></a>
+            <a href="day19.html"><li>19</li></a>
+            <a href="day20.html"><li>20</li></a>
+            <a href="day22.html"><li>22</li></a>
+            <a href="day23.html"><li>23</li></a>
+            <a href="day24.html"><li>24</li></a>
+            <a href="day25.html"><li>25</li></a>
+            <a href="day26.html"><li>26</li></a>
+            <a href="day27.html"><li>27</li></a>
+            <a href="day28.html"><li>28</li></a>
+            <a href="day29.html"><li>29</li></a>
+            <a href="day30.html"><li>30</li></a>
         </ul>
     </nav>
     <section class="container">
     <h2>Day 2</h2>
     <p>
-        Today is day two. I'm happy with the progress I made yesterday, but it's definitely a rough looking page. I'd like to focus on optimizing the mobile view, possibly with a hamburger style menu? We'll see.<br><br>I'm also realizing that I can't necessarily just continue to optimize a single page for the next thirty days, so I'm thinking through additional tools/apps I can build onto each of these pages.<br><br>I have a side project on building a trivia app, so I'm thinking I can build out a trivia question that is randomly generated per day, per user.<br><br>First things first, I need to get this looking cleaner, and functioning better on mobile screens.
+        Today is day two. I'm happy with the progress I made yesterday, but it's definitely a rough looking page. I'd like to focus on optimizing the mobile view, possibly with a hamburger style menu? We'll see.
+    </p>
+    <p>I'm also realizing that I can't necessarily just continue to optimize a single page for the next thirty days, so I'm thinking through additional tools/apps I can build onto each of these pages.</p><p>I have a side project on building a trivia app, so I'm thinking I can build out a trivia question that is randomly generated per day, per user.</p><p>First things first, I need to get this looking cleaner, and functioning better on mobile screens.</p><p>It's starting to come together, with Google fonts, and removing some of the borders, etc... I've adjusted the breakpoints for mobile-styling and made some adjustments there, which has definitely helped the mobile experience.</p><p>Currently working on some aesthetic changes, such as shadows on the top navigation. I want to give the illusion that it's floating above the page, both visually, and functionally (I believe I'd use Z-Index for that? To the MDN we go.)
+        <p>I've added dark mode functionality using a pretty simple JS function. What this function does is it adds the class of .dark to the body element of the document. When it adds that class, it toggles the background to a charcoal gray. In the future, I'd like to make the button be a little nicer, and possibly have a sliding animation.</p>
     </p>
     </section>
+    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 </html>

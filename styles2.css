@@ -9,8 +9,8 @@ html body{
 .container{
     max-width: 800px;
     margin: 0 auto;
-    border: black solid 1px;
-    padding: 0 10%;
+    padding: 0 5%;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
 }
 
 nav{
@@ -18,6 +18,10 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 2vh;
+    box-shadow: 0 4px 8px 2px rgba(0,0,0,0.6);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 /* NAVIGATION */
@@ -33,8 +37,8 @@ nav{
     list-style-type: none;
     padding: 0px 10px;
     margin: 0px 5px 0px 5px;
-    border: gray solid 1px;
-    border-radius: 4px;
+    border: gray solid 2px;
+    border-radius: 5px;
     
 }
 
@@ -43,14 +47,30 @@ nav{
 h1{
     font-size: 3em;
     color: gray;
+    text-shadow: 2px 3px rgba(128,128,128, 0.3)
 }
 
 h2{
     font-size: 2.5em;
+    font-family: 'Silkscreen', cursive;
+    text-shadow: 2px 2px rgba(0,0,0,0.3);
+    border-bottom: 1px solid gray;
+    border-width: 2px;
+    width: 50%;
 }
 
 p{
-    font-size: 2em;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 20px;
+}
+
+h2 + p{
+    text-indent: 15px;
+}
+
+nav{
+    font-family: 'Silkscreen', cursive;
 }
 
 a{
@@ -66,8 +86,31 @@ a:active{
     color: whitesmoke;
 }
 
+/* DARK MODE SELECTOR */
+
+.darkModeButton{
+    cursor: pointer;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #e6e6e6;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.dark{
+    background-color: #222;
+    color: #e6e6e6;
+}
+
 /* MOBILE STYLES */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
+
+    .container{
+        margin: 0 auto;
+        padding: 0 5%;
+    }
 
     nav{
         background-color: #023020;
@@ -79,6 +122,18 @@ a:active{
     h1{
         font-size: 2em;
         text-align: center;
+        margin: 0;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    p{
+        font-size: 1.5em;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
 
@@ -92,6 +147,19 @@ a:active{
     .navItems li{
         list-style-type: none;
         justify-content: center;
-        margin: 0px 5px 0px 5px;
+        margin: 5px;
     }
+
+    .darkModeButton{
+        cursor: pointer;
+        border: 1px solid #555;
+        background-color: #222;
+        color: #e6e6e6;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+    
   }
