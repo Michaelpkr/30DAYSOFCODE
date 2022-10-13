@@ -8,5 +8,5 @@ let currentPage = Number(document.querySelector("#pageIdentify").innerHTML)
 toPreviousLink = document.getElementById("toPrevious");
 toNextLink = document.getElementById("toNext");
 
-toPreviousLink.setAttribute("href", `day${currentPage - 1}.html`)
-toNextLink.setAttribute("href", `day${currentPage + 1}.html`)
+toPreviousLink.setAttribute("href", `https://michaelpkr.github.io/30DAYSOFCODE/day${currentPage - 1}.html`)
+toNextLink.setAttribute("href", `https://michaelpkr.github.io/30DAYSOFCODE/day${currentPage + 1}.html`)
