@@ -22,10 +22,16 @@
     </nav>
     <section class="container">
     <h2>Day <span id="pageIdentify">4</span></h2>
-    <p>Coming soon . . .
+    <div id="greeting"></div>
+    <p>Today is day 4. Yesterday I was able to get my navigation set up better, and make the site work better on mobile. However, I didn't get to optimizing the dark mode selector, as I ran out of time with the Javascript elements of the navigation.
     </p>
+    <p>
+        That being said, I'm going to start out with working on the dark mode selector, both in it's positioning, and it's aesthetics. I'd like for it to show a sun while in dark mode, and a moon while in light mode, but we'll see how it goes.
+    </p>
+
+    <p>I also want to explore the idea of displaying a greeting to new users, and allowing them to set their name as a personalized greeting. I'm guessing I'll need to use localStorage for this, but I'm going to research this tonight.</p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
 </html>
