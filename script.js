@@ -1,11 +1,12 @@
-localStorage.setItem(userName, "there")
+let currentPage = Number(document.querySelector("#pageIdentify").innerHTML)
 
-if(localStorage.getItem(userName) === "there"){
-    let person = prompt("Please enter your name")
-    localStorage.setItem(userName, person)
-}
+toPreviousLink = document.getElementById("toPrevious");
+toNextLink = document.getElementById("toNext");
 
-document.getElementById('greeting').innerHTML = `Hello ${person}`
+toPreviousLink.setAttribute("href", `https://michaelpkr.github.io/30DAYSOFCODE/day${currentPage - 1}.html`)
+toNextLink.setAttribute("href", `https://michaelpkr.github.io/30DAYSOFCODE/day${currentPage + 1}.html`)
+
+console.log(document.getElementById("darkModeButton").innerHTML)
 
 function darkModeSwitch() {
     let element = document.body;
@@ -22,13 +23,3 @@ function darkModeSwitch() {
     
     
     }
-
-let currentPage = Number(document.querySelector("#pageIdentify").innerHTML)
-
-toPreviousLink = document.getElementById("toPrevious");
-toNextLink = document.getElementById("toNext");
-
-toPreviousLink.setAttribute("href", `https://michaelpkr.github.io/30DAYSOFCODE/day${currentPage - 1}.html`)
-toNextLink.setAttribute("href", `https://michaelpkr.github.io/30DAYSOFCODE/day${currentPage + 1}.html`)
-
-console.log(document.getElementById("darkModeButton").innerHTML)
