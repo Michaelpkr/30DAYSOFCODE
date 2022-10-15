@@ -22,4 +22,19 @@ function darkModeSwitch() {
 
     
     
+    
     }
+
+
+    function askName() {
+        let username = localStorage.getItem('username');
+        if (!username) {
+          username = prompt("Please enter your name:");
+        }
+        if (username != null) {
+            document.getElementById("greeting").innerHTML = `Hey ${username},`
+            localStorage.setItem('username', username);
+        } else {
+            document.getElementById("noUser").innerHTML = "Welcome, Stranger!";
+        }
+      }  

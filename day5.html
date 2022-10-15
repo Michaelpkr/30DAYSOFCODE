@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles5.css">
     <title>30DAYSOFCODE</title>
 </head>
-<body>
+<body onload="askName()">
     <nav>
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
@@ -22,10 +22,13 @@
     </nav>
     <section class="container">
     <h2>Day <span id="pageIdentify">5</span></h2>
-    <p>Coming soon . . .
+    <p id="greeting"></p>
+    <p>Today is day 5.  I wasn't able to successfully complete my task of displaying a greeting to new users, so that will be my focus today.<br><br>
+
+        My hope is that I can have the page display a prompt on the user's initial visit, take their name, then greet them on arrival each day, and not display the prompt again for the duration of the 30 days.
     </p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
 </html>

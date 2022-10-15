@@ -2,6 +2,8 @@
 html body{
     padding: 0;
     margin: 0;
+    transition: background-color 1s;
+    transition: color 2s;
 }
 
 /* PAGE LAYOUT */
@@ -37,8 +39,15 @@ nav{
     display: flex;
     list-style-type: none;
     padding: 0px 15px;
-    margin: 0px 5px 0px 5px;
+    margin: 5px 5px 5px 5px;
     border: gray solid 2px;
+    border-radius: 5px;
+}
+
+.navItems li:hover{
+    color: black;
+    transition: 0.35s;
+    background-color: aliceblue;
     border-radius: 5px;
 }
 
@@ -52,7 +61,7 @@ h1{
 
 h2{
     font-size: 2.5em;
-    font-family: 'Silkscreen', cursive;
+    font-family: 'Silkscreen', sans-serif;
     text-shadow: 2px 2px rgba(0,0,0,0.3);
     border-bottom: 1px solid gray;
     border-width: 2px;
@@ -65,25 +74,13 @@ p, ol > li{
     padding-bottom: 20px;
 }
 
-h2 + p{
-    text-indent: 15px;
-}
-
 nav{
-    font-family: 'Silkscreen', cursive;
+    font-family: 'Silkscreen', sans-serif;
 }
 
 a{
     text-decoration: none;
     color: gray;
-}
-a:hover{
-    font-weight: bolder;
-    color: whitesmoke;
-    transition: 0.5s;
-}
-a:active{
-    color: whitesmoke;
 }
 
 ul{
@@ -104,10 +101,19 @@ ul{
     position: fixed;
     bottom: 30px;
     right: 30px;
+    border-radius: 30px;
 }
+
 .dark{
     background-color: #222;
     color: #e6e6e6;
+    transition-duration: 1s;
+}
+
+.light{
+    background-color:  #e6e6e6;
+    color: #222;
+    transition-duration: 1s;
 }
 
 /* MOBILE STYLES */
