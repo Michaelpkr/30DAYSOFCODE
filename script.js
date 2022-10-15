@@ -19,12 +19,8 @@ function darkModeSwitch() {
     }else if (document.getElementById("darkModeButton").innerHTML = "☼"){
         document.getElementById("darkModeButton").innerHTML = "☽"
     }
-
-    
-    
     
     }
-
 
     function askName() {
         let username = localStorage.getItem('username');
