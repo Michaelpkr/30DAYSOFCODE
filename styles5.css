@@ -44,6 +44,18 @@ nav{
     border-radius: 5px;
 }
 
+.preferences{
+    color: rgba(128,128,128);
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+display: flex;
+}
+
 .navItems li:hover{
     color: black;
     transition: 0.35s;

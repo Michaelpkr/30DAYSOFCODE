@@ -34,3 +34,9 @@ function darkModeSwitch() {
             document.getElementById("noUser").innerHTML = "Welcome, Stranger!";
         }
       }  
+
+     function toggleMenu(){
+        let preferences = document.getElementById("preferencesMain")
+        let preferencesChild = document.getElementsByClassName("preferences");
+        preferencesChild.classList.add("hide")
+     }
