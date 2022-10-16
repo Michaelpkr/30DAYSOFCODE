@@ -10,22 +10,46 @@
     <link rel="stylesheet" href="styles6.css">
     <title>30DAYSOFCODE</title>
 </head>
-<body>
-    <nav>
+<body onload="askName()">
+    <nav id="navManipulation">
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
             <a href="index.html"><li><<</li></a>
             <a id="toPrevious"><li><</li></a>
             <a id="toNext"><li>></li></a>
             <a href="day30.html"><li>>></li></a>
+            <a><li id="myBtn">Preferences</li></a>
         </ul>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="modal-text">Choose your theme:</p>
+    <span id="red">Red</span>
+    <span id="blue">Blue</span>
+    <span id="yellow">Yellow</span>
+    <span id="green">Green</span>
+    <span id="black">Black</span>
+    
+  </div>
+
+</div>
     </nav>
     <section class="container">
     <h2>Day <span id="pageIdentify">6</span></h2>
-    <p>Coming soon . . .
-    </p>
+    <p id="greeting"></p>
+    <p>Today is day 6. I was able to focus solely on creating a preferences modal for users to select their preferred colorscheme, and their preference is stored in local storage, so that it will persist from session to session.<br><br>
+    
+    I'd like to expand this out to font changes, border colors, and their preferred greeting.<br><br>
+        I'm pretty happy with how today turned out, as I'm getting more comfortable with accessing and manipulating local storage, and in general, just communicating between the HTML and JS files.<br><br>
+        Moving into tomorrow, I'd like to add the same preferences functionality into the mobile version of the application, because currently you can only access your preferences in the desktop version. This is because of a space issue on the mobile view (I need to adjust the overall structure on mobile so that everything on the header stacks vertically.)
+</p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
 </html>
