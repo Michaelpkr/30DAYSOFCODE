@@ -78,9 +78,13 @@ function darkModeSwitch() {
 
         // PREFERENCES
 
+        // BANNER COLOR SELECTOR
+
         function preferences(){
             let currentColor = localStorage.getItem("color")
             document.getElementById("navManipulation").classList.add(currentColor)
+            let currentTextColor = localStorage.getItem("currentTextColor")
+            document.getElementById("textManipulation").classList.add(currentTextColor)
         }
 
         let red = document.getElementById("red")
@@ -121,4 +125,54 @@ function darkModeSwitch() {
         document.getElementById("navManipulation").classList.remove(`${currentColor}`)
         document.getElementById("navManipulation").classList.add("black")
         localStorage.setItem('color', "black");
+        }
+
+        // TEXT COLOR SELECTOR
+
+        let textred = document.getElementById("textred")
+        textred.onclick = function(){
+        let currentTextColor = localStorage.getItem("currentTextColor")
+        document.getElementById("textManipulation").classList.remove(`${currentTextColor}`)
+        document.getElementById("textManipulation").classList.add("textred")
+        localStorage.setItem('currentTextColor', "textred");
+        }
+
+        let textblue = document.getElementById("textblue")
+        textblue.onclick = function(){
+        let currentTextColor = localStorage.getItem("currentTextColor")
+        document.getElementById("textManipulation").classList.remove(`${currentTextColor}`)
+        document.getElementById("textManipulation").classList.add("textblue")
+        localStorage.setItem('currentTextColor', "textblue");
+        }
+        
+        let textyellow = document.getElementById("textyellow")
+        textyellow.onclick = function(){
+        let currentTextColor = localStorage.getItem("currentTextColor")
+        document.getElementById("textManipulation").classList.remove(`${currentTextColor}`)
+        document.getElementById("textManipulation").classList.add("textyellow")
+        localStorage.setItem('currentTextColor', "textyellow");
+        }
+
+        let textgreen = document.getElementById("textgreen")
+        textgreen.onclick = function(){
+        let currentTextColor = localStorage.getItem("currentTextColor")
+        document.getElementById("textManipulation").classList.remove(`${currentTextColor}`)
+        document.getElementById("textManipulation").classList.add("textgreen")
+        localStorage.setItem('currentTextColor', "textgreen");
+        }
+        
+        let textblack = document.getElementById("textblack")
+        textblack.onclick = function(){
+        let currentTextColor = localStorage.getItem("currentTextColor")
+        document.getElementById("textManipulation").classList.remove(`${currentTextColor}`)
+        document.getElementById("textManipulation").classList.add("textblack")
+        localStorage.setItem('currentTextColor', "textblack");
+        }
+
+        let textwhite = document.getElementById("textwhite")
+        textwhite.onclick = function(){
+        let currentTextColor = localStorage.getItem("currentTextColor")
+        document.getElementById("textManipulation").classList.remove(`${currentTextColor}`)
+        document.getElementById("textManipulation").classList.add("textwhite")
+        localStorage.setItem('currentTextColor', "textwhite");
         }

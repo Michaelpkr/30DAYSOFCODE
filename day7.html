@@ -10,22 +10,57 @@
     <link rel="stylesheet" href="styles7.css">
     <title>30DAYSOFCODE</title>
 </head>
-<body>
-    <nav>
+<body onload="askName()">
+    <nav id="navManipulation">
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
             <a href="index.html"><li><<</li></a>
             <a id="toPrevious"><li><</li></a>
             <a id="toNext"><li>></li></a>
             <a href="day30.html"><li>>></li></a>
+            <a><li id="myBtn">Preferences</li></a>
         </ul>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="modal-text">Choose your banner color:</p>
+    <span id="red">Red</span>
+    <span id="blue">Blue</span>
+    <span id="yellow">Yellow</span>
+    <span id="green">Green</span>
+    <span id="black">Black</span>
+
+    <p class="modal-text">Choose your text color:</p>
+
+    <span id="textred">Red</span>
+    <span id="textblue">Blue</span>
+    <span id="textyellow">Yellow</span>
+    <span id="textgreen">Green</span>
+    <span id="textblack">Black</span>
+    <span id="textwhite">White</span>
+    
+  </div>
+
+</div>
     </nav>
-    <section class="container">
+    <section id="textManipulation" class="container">
     <h2>Day <span id="pageIdentify">7</span></h2>
-    <p>Coming soon . . .
+    <p id="greeting"></p>
+    <p>Today is day 7. My plan for today is to bring the preferences functionality into the mobile view of the application. I'd like to have a "gear" button that expands the preferences modal into full screen, with an "X" to close it out and continue browsing.</p>
+    <p>
+        If I complete that, and am good with how it functions, I'll move onto creating other customizable elements for the site, such as font-styles, or text color.<br><br>
+
+        - 45 minutes remaining - <br><br>
+
+        I've got the mobile styling corrected, and I've added a text color preference as well. I'm going to go ahead and push to GitHub and test to make sure everything is functioning in a web enviroment as expected.
     </p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
 </html>
