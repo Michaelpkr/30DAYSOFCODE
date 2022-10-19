@@ -10,22 +10,74 @@
     <link rel="stylesheet" href="styles8.css">
     <title>30DAYSOFCODE</title>
 </head>
-<body>
-    <nav>
+<body onload="askName()">
+    <nav id="navManipulation">
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
             <a href="index.html"><li><<</li></a>
             <a id="toPrevious"><li><</li></a>
             <a id="toNext"><li>></li></a>
             <a href="day30.html"><li>>></li></a>
+            <a><li id="myBtn">Preferences</li></a>
         </ul>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="modal-text">Choose your banner color:</p>
+    <span id="red">Red</span>
+    <span id="blue">Blue</span>
+    <span id="yellow">Yellow</span>
+    <span id="green">Green</span>
+    <span id="black">Black</span>
+
+    <p class="modal-text">Choose your text color:</p>
+
+    <span id="textred">Red</span>
+    <span id="textblue">Blue</span>
+    <span id="textyellow">Yellow</span>
+    <span id="textgreen">Green</span>
+    <span id="textblack">Black</span>
+    <span id="textwhite">White</span>
+    
+  </div>
+
+</div>
     </nav>
-    <section class="container">
+    <section id="textManipulation" class="container">
     <h2>Day <span id="pageIdentify">8</span></h2>
-    <p>Coming soon . . .
-    </p>
+    <p id="greeting"></p>
+    <p>Today is day 8. Today I'll be using the <a href="https://todoist.com/productivity-methods/pomodoro-technique">Pomodoro technique</a> and breaking my workflow up into 25 minute sections, so I'll be documenting what I accomplish in each of those sections.</p>
+        <h2>Pomodoro 1</h2>
+    <p>What I've found is that I want to add more functionality to the site, but because of nature of this site, I don't want to create multiple pages to maintain (30 different versions of multiple pages starts to get out of hand quickly) so I think what I'm doing for the remainder of the thirty days, is adding a text post above, and have tools/games below, laid out in a grid. Today will just be to establish the grid itself, and hopefully dropping in V1 of a PokeDex project I started a long time ago. We'll see how that goes.<br><br>
+        <h2>Break 1</h2>
+    <p>I'm on my first five minute break after the first Pomodoro, and embarassed to say that a majority of that first 25 minutes was troubleshooting a stylesheet linking issue. I was adjusting styles7.css, while working on my day8.html, and I thought I was losing my mind. Everything is now wired up correctly and I have the applications container built out, and after the break, I'm going to pull old code from my PokeDex application, and see about adding it into this page.</p>
+    <h2>Pomodoro 2</h2>
+    <p>I'm currently working on adding in my PokeDex application. This shouldn't be too difficult as it's just an API call from <a href="https://pokeapi.co/">PokeAPI</a>. I still need to work on styling as my original intent with this tool was just to get comfortable with calling API's and displaying their information to the page itself.</p>
+        <h2>Break 2</h2>
+    <p>I was able to get my code to display on the page, and it looks to display pretty well on mobile as well. I'd like to use CSS to actually "paint" a Pokedex on screen, but that might be a little too ambitious for the next Pomodoro. I'll at least try and get the order of items in the Pokedex to lay out correctly.</p>
+    <h2>Summary</h2>
+
+    <p>I stopped with the Pomodoro method tonight. I'm sure it's a good working style in long sessions, but when time is of the essence for these 2 hour blocks, I found it to be more tedious and interuptive than anything.<br><br>
+    
+    Overall, I'm happy with where I got to tonight. I was able to implement the Pokedex Application into this site, without adding an additional page, and was finally able to start styling it like I had wanted to when I first created it. This will give me the opportunity to further build this out, and add more functionality to it.</p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <section class="container">
+        <h2>Applications</h2>
+        <section class="applications" id="pokedex">
+            <h2 id="pokedexlogo">PokeDex</h2>
+            <img id="pokemonScreen" src="" alt="" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDbZjWMgKBy2PUf1AZKJRvPeNEc76NuiB5Qw&usqp=CAU'">
+            <h2 id="pokemonname"></h2>
+            <input type="text" name="" id="pokemoninput">
+            <button id="getpokemon">Get Pokemon</button>
+        </section>
+        <p>To use this Pokedex, simply type the name of your favorite Pokemon, and it's image will display above (more functionality coming soon).</p>
+    </section>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
 </html>
