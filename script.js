@@ -179,14 +179,17 @@ function darkModeSwitch() {
 
         // APPLICATIONS
 
-        document.querySelector("button").addEventListener("click", getPokemon)
+        document.getElementById("getPokemon").addEventListener("click", getPokemon)
+
+        document.getElementById("getRandomPokemon").addEventListener("click", getRandomPokemon)
 
 
 function getPokemon() {
 
     let pokemon = document.querySelector("input").value.toLowerCase()
+    let pokemonId = pokemon
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -199,3 +202,25 @@ function getPokemon() {
         });
 
 }
+
+function getRandomPokemon() {
+
+    let pokemonId = Math.floor(Math.random() * 898)
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            document.getElementById("pokemonname").innerText = (data.species.name)
+            document.querySelector("img").src = (data.sprites.front_default)
+            document.querySelector("h3").innerText = (data.height)
+        })
+        .catch(err => {
+            console.log(`error ${err}`)
+        });
+
+}
+
+// let pokemonId = function randomPokemonId(){
+//     let pokemonId = Math.floor(Math.random() * 898)
+// }

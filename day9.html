@@ -10,22 +10,68 @@
     <link rel="stylesheet" href="styles9.css">
     <title>30DAYSOFCODE</title>
 </head>
-<body>
-    <nav>
+<body onload="askName()">
+    <nav id="navManipulation">
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
             <a href="index.html"><li><<</li></a>
             <a id="toPrevious"><li><</li></a>
             <a id="toNext"><li>></li></a>
             <a href="day30.html"><li>>></li></a>
+            <a><li id="myBtn">Preferences</li></a>
         </ul>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="modal-text">Choose your banner color:</p>
+    <span id="red">Red</span>
+    <span id="blue">Blue</span>
+    <span id="yellow">Yellow</span>
+    <span id="green">Green</span>
+    <span id="black">Black</span>
+
+    <p class="modal-text">Choose your text color:</p>
+
+    <span id="textred">Red</span>
+    <span id="textblue">Blue</span>
+    <span id="textyellow">Yellow</span>
+    <span id="textgreen">Green</span>
+    <span id="textblack">Black</span>
+    <span id="textwhite">White</span>
+    
+  </div>
+
+</div>
     </nav>
-    <section class="container">
+    <section id="textManipulation" class="container">
     <h2>Day <span id="pageIdentify">9</span></h2>
-    <p>Coming soon . . .
+    <p id="greeting"></p>
+    <p>Today is day 9. I'd like to add functionality to the PokeDex application that allows it produce a randomly generated Pokemon, as some users may not know the names of Pokemon, therefore limiting its functionality. I should be able to write a function that generates a random number, and call the Pokemon based off of it's ID number, rather than having to call it directly by name.<br><br>
+    
+    If I get that complete, I'd like to add a description of the Pokemon, below the image, and above the name of the Pokemon. This will be more of a CSS challenge, rather than Javascript, as the application is wired up already to collect different values from PokeAPI.</p>
+    <p>It took me longer than expected to get the "Random" button set up like I wanted, but I was able to learn more about the API itself. I actually don't have access to the Pokemon's description, but I may, tomorrow, work on pulling in the other data I have access to.</p>
+    <p>
+        There's much less obvious progress, but I learned a lot tonight. Mainly, in declaring/calling variables between multiple functions, and how to navigate API documentation more effeciently. I also learned several tricks in copying property paths for objects in the Google Chrome Dev Tools panel.
     </p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <section class="container">
+        <h2>Applications</h2>
+        <section class="applications" id="pokedex">
+            <h2 id="pokedexlogo">PokeDex</h2>
+            <img id="pokemonScreen" src="" alt="" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDbZjWMgKBy2PUf1AZKJRvPeNEc76NuiB5Qw&usqp=CAU'">
+            <h2 id="pokemonname"></h2>
+            <input type="text" name="" id="pokemoninput">
+            <button id="getPokemon">Get Pokemon</button>
+            <button id="getRandomPokemon">Random</button>
+        </section>
+        <p>To use this Pokedex, simply type the name of your favorite Pokemon, and it's image will display above (more functionality coming soon).</p>
+    </section>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
 </html>
