@@ -538,10 +538,10 @@ ul {
         margin-block-start: 0px;
     }
     #pokemonScreen {
-        min-height: 25vh;
-        min-width: 25vh;
-        height: 90%;
-        width: 100%;
+        min-height: 30%;
+        min-width: 20%;
+        height: 100%;
+        width: 80%;
         border-bottom: none;
         background-color: gray;
         margin: 0 auto;
@@ -552,7 +552,7 @@ ul {
     }
     #pokemonname {
         min-width: 25vh;
-        width: 100%;
+        width: 80%;
         border-top: none;
         background-color: gray;
         text-align: center;
@@ -560,9 +560,18 @@ ul {
         margin-block-start: 0px;
         font-size: 1.5em;
     }
+    #pokemontype {
+        min-width: 25vh;
+        width: 80%;
+        border: black 2px solid;
+        background-color: gray;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1em;
+    }
     #pokemonheight {
         min-width: 25vh;
-        width: 100%;
+        width: 80%;
         border-top: none;
         background-color: gray;
         text-align: center;
@@ -571,7 +580,7 @@ ul {
     }
     #pokemonweight {
         min-width: 25vh;
-        width: 100%;
+        width: 80%;
         border-top: none;
         background-color: gray;
         text-align: center;
