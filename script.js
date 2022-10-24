@@ -177,7 +177,7 @@ textwhite.onclick = function() {
     localStorage.setItem('currentTextColor', "textwhite");
 }
 
-// APPLICATIONS
+// POKEDEX
 
 document.getElementById("getPokemon").addEventListener("click", getPokemon)
 
@@ -227,6 +227,27 @@ function getRandomPokemon() {
 
 }
 
-// let pokemonId = function randomPokemonId(){
-//     let pokemonId = Math.floor(Math.random() * 898)
-// }
+
+// TRIVIA QUESTIONS
+
+let triviaChoices = []
+
+fetch(`https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        document.getElementById("triviaQuestion").innerHTML = (data.results[0].question)
+        triviaChoices.push(data.results[0].correct_answer)
+        document.getElementById("answer1").innerHTML = (triviaChoices[0])
+        triviaChoices.push(data.results[0].incorrect_answers[0])
+        document.getElementById("answer2").innerHTML = (triviaChoices[1])
+        triviaChoices.push(data.results[0].incorrect_answers[1])
+        document.getElementById("answer3").innerHTML = (triviaChoices[2])
+        triviaChoices.push(data.results[0].incorrect_answers[2])
+        document.getElementById("answer4").innerHTML = (triviaChoices[3])
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    });
+
+// console.log(addEventListener.onclick(Event.target.value))
