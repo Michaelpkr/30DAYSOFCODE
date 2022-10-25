@@ -230,24 +230,33 @@ function getRandomPokemon() {
 
 // TRIVIA QUESTIONS
 
-let triviaChoices = []
+document.getElementById("showAnswer").addEventListener("click", showAnswer)
 
-fetch(`https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`)
+function showAnswer(){
+    document.getElementById("correctAnswer").classList.toggle("hidden");
+}
+
+   fetch(`https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
+
+        let triviaChoices = []
+        // Gets Question
         document.getElementById("triviaQuestion").innerHTML = (data.results[0].question)
+        // Gets Correct Answer
         triviaChoices.push(data.results[0].correct_answer)
-        document.getElementById("answer1").innerHTML = (triviaChoices[0])
+        document.getElementById("answer1").innerHTML = (`A: ${triviaChoices[0]}`)
+        // Gets Incorrect Answer 1
         triviaChoices.push(data.results[0].incorrect_answers[0])
-        document.getElementById("answer2").innerHTML = (triviaChoices[1])
+        document.getElementById("answer2").innerHTML = (`B: ${triviaChoices[1]}`)
+        // Gets Incorrect Answer 2
         triviaChoices.push(data.results[0].incorrect_answers[1])
-        document.getElementById("answer3").innerHTML = (triviaChoices[2])
+        document.getElementById("answer3").innerHTML = (`C: ${triviaChoices[2]}`)
+        // Gets Incorrect Answer 3
         triviaChoices.push(data.results[0].incorrect_answers[2])
-        document.getElementById("answer4").innerHTML = (triviaChoices[3])
+        document.getElementById("answer4").innerHTML = (`D: ${triviaChoices[3]}`)
+        document.getElementById("correctAnswer").innerHTML = (`Correct answer is ${triviaChoices[0]}`)
     })
     .catch(err => {
         console.log(`error ${err}`)
     });
-
-// console.log(addEventListener.onclick(Event.target.value))

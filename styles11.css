@@ -122,6 +122,10 @@ ul {
     margin-block-end: 0px;
 }
 
+.hidden{
+    display:none
+}
+
 
 /* DARK MODE SELECTOR */
 
@@ -465,6 +469,11 @@ ul {
     justify-content: space-between;
     margin: 0 auto;
     background-color: gray;
+}
+
+#showAnswer{
+    width: 20%;
+    margin: 0 auto;
 }
 
 
