@@ -231,77 +231,96 @@ function getRandomPokemon() {
 // TRIVIA QUESTIONS
 
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
+    let currentIndex = array.length,
+        randomIndex;
+
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]
+        ];
     }
-  
+
     return array;
-  }
-
-
-let randomizedOrder = shuffle(["1","2","3","4"])
-
-document.getElementById("showAnswer").addEventListener("click", showAnswer)
-
-function showAnswer(){
-    document.getElementById("correctAnswer").classList.toggle("hidden");
 }
 
-    
-    fetch(`https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`)
-    .then(res => res.json())
-    .then(data => {
+
+let randomizedOrder = shuffle(["1", "2", "3", "4"])
+
+// document.getElementById("showAnswer").addEventListener("click", showAnswer)
+
+// function showAnswer() {
+//     document.getElementById("correctAnswer").classList.toggle("hidden");
+// }
+
+document.getElementById("trivia").addEventListener("click", colorAnswer)
+
+function colorAnswer() {
+    // console.log("Working")
+}
+
+// ==================================================================
 
 
-        let triviaChoices = []
-        // Gets Question
-        document.getElementById("triviaQuestion").innerHTML = (data.results[0].question)
-        // Gets Correct Answer
-        triviaChoices.push(data.results[0].correct_answer)
-        document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = (`${triviaChoices[0]}`)
-        // Gets Incorrect Answer 1
-        triviaChoices.push(data.results[0].incorrect_answers[0])
-        document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = (`${triviaChoices[1]}`)
-        // Gets Incorrect Answer 2
-        triviaChoices.push(data.results[0].incorrect_answers[1])
-        document.getElementById(`answer${randomizedOrder[2]}`).innerHTML = (`${triviaChoices[2]}`)
-        // Gets Incorrect Answer 3
-        triviaChoices.push(data.results[0].incorrect_answers[2])
-        document.getElementById(`answer${randomizedOrder[3]}`).innerHTML = (`${triviaChoices[3]}`)
-        document.getElementById("correctAnswer").innerHTML = (`Correct answer is ${triviaChoices[0]}`)
-    })
-    .catch(err => {
-        console.log(`error ${err}`)
-    });
+async function getTrivia() {
+    let data = await fetch(
+        `https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`
+    ).then(response => response.json())
 
-    // =======================================================
+    console.log(data.results)
+
+    return data.results
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         // Gets Question, Correct, and Incorrect Answers
+        //         let question = data.results[0].question
+        //         let correctAnswer = data.results[0].correct_answer
+        //         let incorrectAnswers = data.results[0].incorrect_answers
+
+    //         let triviaChoices = [correctAnswer, ...incorrectAnswers]
+
+    //         return data
+
+    //         // when user clicks on trivia section add class 'colorize to green' the "correctAnswer"
 
 
-    function shuffle(array) {
-        let currentIndex = array.length,  randomIndex;
-      
-        // While there remain elements to shuffle.
-        while (currentIndex != 0) {
-      
-          // Pick a remaining element.
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-        }
-      
-        return array;
-      }
+    //         document.getElementById("triviaQuestion").innerHTML = question
+    //         triviaChoices.push(data.results[0].correct_answer)
+    //         document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = (`${triviaChoices[0]}`)
+    //         document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = (`${triviaChoices[1]}`)
+    //         document.getElementById(`answer${randomizedOrder[2]}`).innerHTML = (`${triviaChoices[2]}`)
+    //         document.getElementById(`answer${randomizedOrder[3]}`).innerHTML = (`${triviaChoices[3]}`)
+    //             // document.getElementById("correctAnswer").innerHTML = (`Correct answer is ${triviaChoices[0]}`)
+    //     })
+    //     .catch(err => {
+    //         console.log(`error ${err}`)
+    //     });
+}
+// =======================================================
 
+
+function shuffle(array) {
+    let currentIndex = array.length,
+        randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]
+        ];
+    }
+
+    return array;
+}
