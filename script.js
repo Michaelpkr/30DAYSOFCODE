@@ -273,36 +273,51 @@ async function getTrivia() {
         `https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`
     ).then(response => response.json())
 
-    console.log(data.results)
-
     return data.results
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         // Gets Question, Correct, and Incorrect Answers
-        //         let question = data.results[0].question
-        //         let correctAnswer = data.results[0].correct_answer
-        //         let incorrectAnswers = data.results[0].incorrect_answers
-
-    //         let triviaChoices = [correctAnswer, ...incorrectAnswers]
-
-    //         return data
-
-    //         // when user clicks on trivia section add class 'colorize to green' the "correctAnswer"
-
-
-    //         document.getElementById("triviaQuestion").innerHTML = question
-    //         triviaChoices.push(data.results[0].correct_answer)
-    //         document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = (`${triviaChoices[0]}`)
-    //         document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = (`${triviaChoices[1]}`)
-    //         document.getElementById(`answer${randomizedOrder[2]}`).innerHTML = (`${triviaChoices[2]}`)
-    //         document.getElementById(`answer${randomizedOrder[3]}`).innerHTML = (`${triviaChoices[3]}`)
-    //             // document.getElementById("correctAnswer").innerHTML = (`Correct answer is ${triviaChoices[0]}`)
-    //     })
-    //     .catch(err => {
-    //         console.log(`error ${err}`)
-    //     });
 }
-// =======================================================
+
+async function renderTrivia() {
+    // TODO: research "Desctructuring arrays and objects"
+    let [trivia] = await getTrivia()
+
+    let correctAnswer
+    let incorrectAnswers
+
+    console.log(trivia.difficulty)
+}
+
+renderTrivia()
+
+//     .then(res => res.json())
+//     .then(data => {
+//         // Gets Question, Correct, and Incorrect Answers
+//         let question = data.results[0].question
+//         let correctAnswer = data.results[0].correct_answer
+//         let incorrectAnswers = data.results[0].incorrect_answers
+
+//         let triviaChoices = [correctAnswer, ...incorrectAnswers]
+
+//         return data
+
+//         // when user clicks on trivia section add class 'colorize to green' the "correctAnswer"
+
+
+//         document.getElementById("triviaQuestion").innerHTML = question
+//         triviaChoices.push(data.results[0].correct_answer)
+//         document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = (`${triviaChoices[0]}`)
+//         document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = (`${triviaChoices[1]}`)
+//         document.getElementById(`answer${randomizedOrder[2]}`).innerHTML = (`${triviaChoices[2]}`)
+//         document.getElementById(`answer${randomizedOrder[3]}`).innerHTML = (`${triviaChoices[3]}`)
+//             // document.getElementById("correctAnswer").innerHTML = (`Correct answer is ${triviaChoices[0]}`)
+//     })
+//     .catch(err => {
+//         console.log(`error ${err}`)
+//     });
+
+let triviaData = getTrivia()
+
+console.log(triviaData)
+    // =======================================================
 
 
 function shuffle(array) {
