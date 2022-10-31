@@ -253,18 +253,6 @@ function shuffle(array) {
 
 let randomizedOrder = shuffle(["1", "2", "3", "4"])
 
-// document.getElementById("showAnswer").addEventListener("click", showAnswer)
-
-// function showAnswer() {
-//     document.getElementById("correctAnswer").classList.toggle("hidden");
-// }
-
-document.getElementById("trivia").addEventListener("click", colorAnswer)
-
-function colorAnswer() {
-    // console.log("Working")
-}
-
 // ==================================================================
 
 
@@ -279,46 +267,33 @@ async function getTrivia() {
 async function renderTrivia() {
     // TODO: research "Desctructuring arrays and objects"
     let [trivia] = await getTrivia()
+    let correctAnswer = trivia.correct_answer
+    let question = trivia.question
+    let incorrectAnswer1 = trivia.incorrect_answers[0]
+    let incorrectAnswer2 = trivia.incorrect_answers[1]
+    let incorrectAnswer3 = trivia.incorrect_answers[2]
+    let category = trivia.category
 
-    let correctAnswer
-    let incorrectAnswers
-
-    console.log(trivia.difficulty)
+    document.getElementById("triviaQuestion").innerHTML = question
+    document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = correctAnswer
+    document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = incorrectAnswer1
+    document.getElementById(`answer${randomizedOrder[2]}`).innerHTML = incorrectAnswer2
+    document.getElementById(`answer${randomizedOrder[3]}`).innerHTML = incorrectAnswer3
+    document.getElementById(`answer${randomizedOrder[0]}`).classList.add("hideAnswer", "correct")
+    document.getElementById(`answer${randomizedOrder[1]}`).classList.add("hideAnswer", "incorrect")
+    document.getElementById(`answer${randomizedOrder[2]}`).classList.add("hideAnswer", "incorrect")
+    document.getElementById(`answer${randomizedOrder[3]}`).classList.add("hideAnswer", "incorrect")
 }
 
 renderTrivia()
 
-//     .then(res => res.json())
-//     .then(data => {
-//         // Gets Question, Correct, and Incorrect Answers
-//         let question = data.results[0].question
-//         let correctAnswer = data.results[0].correct_answer
-//         let incorrectAnswers = data.results[0].incorrect_answers
+document.getElementById("trivia").addEventListener("click", revealAnswer)
 
-//         let triviaChoices = [correctAnswer, ...incorrectAnswers]
-
-//         return data
-
-//         // when user clicks on trivia section add class 'colorize to green' the "correctAnswer"
-
-
-//         document.getElementById("triviaQuestion").innerHTML = question
-//         triviaChoices.push(data.results[0].correct_answer)
-//         document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = (`${triviaChoices[0]}`)
-//         document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = (`${triviaChoices[1]}`)
-//         document.getElementById(`answer${randomizedOrder[2]}`).innerHTML = (`${triviaChoices[2]}`)
-//         document.getElementById(`answer${randomizedOrder[3]}`).innerHTML = (`${triviaChoices[3]}`)
-//             // document.getElementById("correctAnswer").innerHTML = (`Correct answer is ${triviaChoices[0]}`)
-//     })
-//     .catch(err => {
-//         console.log(`error ${err}`)
-//     });
-
-let triviaData = getTrivia()
-
-console.log(triviaData)
-    // =======================================================
-
+function revealAnswer() {
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`answer${i}`).classList.toggle("hideAnswer")
+    }
+}
 
 function shuffle(array) {
     let currentIndex = array.length,
