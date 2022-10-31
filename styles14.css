@@ -366,6 +366,7 @@ ul {
     padding-bottom: 30px;
     padding-top: 30px;
     justify-content: space-between;
+    min-height: 70vh;
     height: 70vh;
     width: 40%;
     background-color: red;
@@ -472,11 +473,11 @@ ul {
 }
 
 .correct {
-    color: green;
+    color: #0ab804;
 }
 
 .incorrect {
-    color: red;
+    color: darkred;
 }
 
 .hideAnswer {
