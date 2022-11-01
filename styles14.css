@@ -471,8 +471,9 @@ ul {
     background-color: gray;
     text-align: center;
     width: 70%;
+    height: 75px;
+    min-height: 75vh;
     max-height: 75vh;
-
 }
 
 .correct {
@@ -493,7 +494,7 @@ ul {
 
 .hideAnswer {
     color: black;
-    border: none;
+    border: transparent 3px solid;
     background-color: gray;
 }
 
@@ -662,7 +663,6 @@ ul {
         margin: 0 auto;
         margin-top: 5%;
     }
-
     #trivia {
         border: solid 3px black;
         padding: 5%;
@@ -675,6 +675,5 @@ ul {
         width: 80%;
         max-width: 90%;
         max-height: 75vh;
-    
     }
 }

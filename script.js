@@ -251,14 +251,13 @@ function shuffle(array) {
 }
 
 
-let randomizedOrder = shuffle(["1", "2", "3", "4"])
 
 // ==================================================================
 
 
 async function getTrivia() {
     let data = await fetch(
-        `https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple`
+        `https://opentdb.com/api.php?amount=1&type=multiple`
     ).then(response => response.json())
 
     return data.results
@@ -274,6 +273,8 @@ async function renderTrivia() {
     let incorrectAnswer3 = trivia.incorrect_answers[2]
     let category = trivia.category
 
+    let randomizedOrder = shuffle(["1", "2", "3", "4"])
+
     document.getElementById("triviaQuestion").innerHTML = question
     document.getElementById(`answer${randomizedOrder[0]}`).innerHTML = correctAnswer
     document.getElementById(`answer${randomizedOrder[1]}`).innerHTML = incorrectAnswer1
@@ -288,12 +289,25 @@ async function renderTrivia() {
 renderTrivia()
 
 document.getElementById("trivia").addEventListener("click", revealAnswer)
+document.getElementById("getNextQuestion").addEventListener("click", getTrivia)
+document.getElementById("getNextQuestion").addEventListener("click", renderTrivia)
+document.getElementById("getNextQuestion").addEventListener("click", removeTriviaClasses)
+
 
 function revealAnswer() {
     for (let i = 1; i < 5; i++) {
         document.getElementById(`answer${i}`).classList.toggle("hideAnswer")
     }
 }
+
+function removeTriviaClasses() {
+    document.getElementById("answer1").classList.remove("correct", "incorrect")
+    document.getElementById("answer2").classList.remove("correct", "incorrect")
+    document.getElementById("answer3").classList.remove("correct", "incorrect")
+    document.getElementById("answer4").classList.remove("correct", "incorrect")
+}
+
+// UTILITIES ==================================================
 
 function shuffle(array) {
     let currentIndex = array.length,

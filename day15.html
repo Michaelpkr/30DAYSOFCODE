@@ -1,31 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles15.css">
     <title>30DAYSOFCODE</title>
 </head>
-<body>
-    <nav>
+
+<body onload="askName()">
+    <nav id="navManipulation">
         <h1 class="navLogo">30DAYSOFCODE</h1>
         <ul class="navItems">
-            <a href="index.html"><li><<</li></a>
-            <a id="toPrevious"><li><</li></a>
-            <a id="toNext"><li>></li></a>
-            <a href="day30.html"><li>>></li></a>
+            <a href="index.html">
+                <li>
+                    <<</li>
+            </a>
+            <a id="toPrevious">
+                <li>
+                    <</li>
+            </a>
+            <a id="toNext">
+                <li>></li>
+            </a>
+            <a href="day30.html">
+                <li>>></li>
+            </a>
+            <a>
+                <li id="myBtn">Preferences</li>
+            </a>
         </ul>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="modal-text">Choose your banner color:</p>
+                <span id="red">Red</span>
+                <span id="blue">Blue</span>
+                <span id="yellow">Yellow</span>
+                <span id="green">Green</span>
+                <span id="black">Black</span>
+
+                <p class="modal-text">Choose your text color:</p>
+
+                <span id="textred">Red</span>
+                <span id="textblue">Blue</span>
+                <span id="textyellow">Yellow</span>
+                <span id="textgreen">Green</span>
+                <span id="textblack">Black</span>
+                <span id="textwhite">White</span>
+
+            </div>
+
+        </div>
     </nav>
-    <section class="container">
-    <h2>Day <span id="pageIdentify">15</span></h2>
-    <p>Coming soon . . .
-    </p>
+    <section id="textManipulation" class="container">
+        <h2>Day <span id="pageIdentify">15</span></h2>
+        <p id="greeting"></p>
+        <p>Today is day 15. I'm focusing primarily on improving the trivia application. I'd like for it to have a "Next Question" button so the user no longer has to refresh the page, then scroll back, just to use have another question to answer.<br><br>            I'll also be working on some aesthetic changes on the desktop version, and doing general cleanup for the mobile version.<br><br>I've gotten to a good place today as far as finishing up the trivia application, so I'm going to use the remainder
+            of my time refactoring, and making my code more concise/readable.
+        </p>
     </section>
-    <button class="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
+    <section class="container">
+        <h2>Applications</h2>
+        <section class="applications" id="pokedex">
+            <h2 id="pokedexlogo">PokeDex</h2>
+            <img id="pokemonScreen" src="" alt="" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDbZjWMgKBy2PUf1AZKJRvPeNEc76NuiB5Qw&usqp=CAU'">
+            <h2 id="pokemonname"></h2>
+            <h2 id="pokemontype"></h2>
+            <h2 id="pokemonheight"></h2>
+            <h2 id="pokemonweight"></h2>
+            <input type="text" name="" id="pokemoninput" placeholder="Enter Pokemon Name or ID">
+            <button id="getPokemon">Get Pokemon</button>
+            <button id="getRandomPokemon">Random</button>
+        </section>
+        <section class="applications" id="trivia">
+            <h2>trivia</h2>
+            <p id="triviaQuestion"></p>
+            <p class="answer" id="answer1"></p>
+            <p class="answer" id="answer2"></p>
+            <p class="answer" id="answer3"></p>
+            <p class="answer" id="answer4"></p>
+            <span id="getNextQuestion" class="button">Next Question</span>
+        </section>
+    </section>
+    </section>
+    <button class="darkModeButton" id="darkModeButton" onclick="darkModeSwitch()">&#x263d;</button>
 </body>
 <script src="script.js"></script>
+
 </html>
