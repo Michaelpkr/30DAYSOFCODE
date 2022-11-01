@@ -82,7 +82,6 @@ h2 {
     text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid gray;
     border-width: 2px;
-    width: 50%;
 }
 
 h3 {
@@ -328,7 +327,7 @@ ul {
 
 .black {
     background-color: black;
-    color: gray;
+    color: black;
 }
 
 .textred {
@@ -464,24 +463,38 @@ ul {
 
 #trivia {
     border: solid 3px black;
-    padding: 10%;
+    padding: 5%;
     padding-bottom: 30px;
     padding-top: 30px;
     justify-content: space-between;
     margin: 0 auto;
     background-color: gray;
+    text-align: center;
+    width: 70%;
+    max-height: 75vh;
+
 }
 
 .correct {
-    color: #0ab804;
+    color: black;
+    transition: color 2s;
+    transition: background-color 2s;
+    transition-duration: border 2s;
+    border: solid 3px #0ab804;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #0ab8049c;
 }
 
 .incorrect {
     color: darkred;
+    transition: color 2s;
 }
 
 .hideAnswer {
     color: black;
+    border: none;
+    background-color: gray;
 }
 
 
@@ -648,5 +661,20 @@ ul {
         justify-content: center;
         margin: 0 auto;
         margin-top: 5%;
+    }
+
+    #trivia {
+        border: solid 3px black;
+        padding: 5%;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        justify-content: space-between;
+        margin: 0 auto;
+        background-color: gray;
+        text-align: center;
+        width: 80%;
+        max-width: 90%;
+        max-height: 75vh;
+    
     }
 }
